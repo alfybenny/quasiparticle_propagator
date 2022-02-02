@@ -58,14 +58,14 @@ class input_processing:
         M = self.get_np_array()
         total_atoms = len(M)
         no_of_molecules = total_atoms/self.no_of_atoms
-        
+       
         mol_index = []
         count = 0
         for i in range(0, int(no_of_molecules)):
             
             one_molecule = []
             for j in range(0, self.no_of_atoms):
-                one_molecule.append(M[j])
+                one_molecule.append(M[j + count])
             mol_index.append(one_molecule)
             count += self.no_of_atoms
             

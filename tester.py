@@ -1,4 +1,5 @@
 import input_interpreter as inp
+import mon_prop
 
 filename = 'combined.xyz'
 
@@ -15,5 +16,12 @@ L = system.mol_coor(1)
 # k.quasi_state()
 
 
-print(len(M[1]))
-print(L)
+# Testing centroid generation
+
+## Testing whether calling crystal will work
+# print(system.matrix)
+
+prop_operator = mon_prop.Property()
+
+print(prop_operator.coor_to_cent(system.crystal, system.no_of_atoms))
+
