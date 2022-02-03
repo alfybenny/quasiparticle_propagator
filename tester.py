@@ -21,7 +21,16 @@ L = system.mol_coor(1)
 ## Testing whether calling crystal will work
 # print(system.matrix)
 
-prop_operator = mon_prop.Property()
+prop_operator = mon_prop.trans_dip(system.crystal)
 
-print(prop_operator.coor_to_cent(system.crystal, system.no_of_atoms))
+prop_operator.coor_to_cent(system.no_of_atoms)
 
+
+# Testing dipole orienter
+
+# storing dipoles
+prop_operator.mon_data()
+
+
+print(prop_operator.prop_list)
+print(prop_operator.centroid_list)

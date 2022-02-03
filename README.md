@@ -15,6 +15,7 @@ Working classes:
 <ul>
     <li>mon_prop.Property: Contains <b>trans_dipole</b>, <b>trans_charge</b>, <b>trans_dens</b> and <b>mol_orb</b></li>
     <ul>Modules added so far:
-        <li>operator_name.coor_to_cent(array, no_of_atoms)</li>
+        <li>operator_name.coor_to_cent(no_of_atoms) - stores the centroids of the moleucles to 'centroid_list'</li>
+        <li>operator_name.mon_data() - Stores. for example, transition dipoles to 'prop_list' </li>
     </ul>
 </ul>
