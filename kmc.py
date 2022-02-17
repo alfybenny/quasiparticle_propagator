@@ -24,11 +24,11 @@ def site_selector(array, mol_index):
         rate_sum += array[i]
         
         if p1 < rate_sum:
-            next_site = int(mol_index[i])
+            next_site = mol_index[i]
             array_index = i
-        
+            break
         else:
-            continue
+            pass
         
     
     

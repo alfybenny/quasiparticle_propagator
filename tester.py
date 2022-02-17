@@ -7,7 +7,7 @@ import kmc
 from matplotlib import pyplot as plt
 import numpy as np
 
-filename = 'napth_test.xyz'
+filename = 'test_10.xyz'
 
 system = inp.xyz(18, filename)
 system.readfile()
@@ -46,10 +46,10 @@ print(len(prop_operator.centroid_list))
 
 # Testing kmc
 
-user_index = 10
+user_index = 50
 
 t = 0.0
-T = 1*1e-11
+T = 1*1e-10
 
 list_t = [int(0)] * len(prop_operator.centroid_list)
 list_t[user_index] = int(1)
@@ -63,11 +63,11 @@ while t < T:
     
     
     
-    near_sites = get_nearby.scan(current_site, prop_operator.centroid_list, 3) # 6 ansgtroms as range
+    near_sites = get_nearby.scan(current_site, prop_operator.centroid_list, 6) # 6 ansgtroms as range
     
     # Calculating coupling
     
-    print('near sites are ' +str(near_sites))
+    # rint('near sites are ' +str(near_sites))
     
     ##########
     
@@ -130,21 +130,36 @@ x = []
 y = []
 z = []
 
+cent_list = prop_operator.centroid_list
+
+initial_site = cent_list[user_index]
+
+a = initial_site[0]
+b = initial_site[1]
+d = initial_site[2]
+
+
+
 for i in site_list1:
     
     x.append(i[0])
     y.append(i[1])
     z.append(i[2])
+    
+    
+    
+t = range(0, len(site_list1))
 
 ax = plt.axes(projection='3d')
 # ax.plot3D(x, y, z, 'gray')
-ax.scatter3D(x, y, z, c=z, cmap='Greens');
-plt.close()
-
-print(site_list)
-site = range(0, len(site_list)) 
-plt.plot(site, site_list, 'ro')
+# ax.scatter3D(a, b, d, c=d, cmap='jet');
+ax.scatter3D(x, y, z, c=t, cmap='jet');
 plt.show()
+
+# print(site_list)
+# site = range(0, len(site_list)) 
+# plt.plot(site, site_list, 'ro')
+# plt.show()
 
     
     
